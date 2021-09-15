@@ -1,0 +1,42 @@
+{
+  "name": "flagr-feature-react",
+  "author": "Sidekicker",
+  "version": "0.0.1",
+  "description": "react module for using flagr-feature-typescript",
+  "keywords": [
+    "flagr"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/getsidekicker/flagr-feature-react"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "build/index.js",
+  "engines": {
+    "node": "16.x",
+    "npm": "7.x"
+  },
+  "scripts": {
+    "clean": "rm -rf build",
+    "build": "npm run clean && tsc",
+    "dev": "npm run build -- --watch"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.20",
+    "@typescript-eslint/eslint-plugin": "^4.31.1",
+    "@typescript-eslint/parser": "^4.31.1",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.25.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.4.0",
+    "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "react": "^17.0.2"
+  }
+}
