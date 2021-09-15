@@ -23,7 +23,7 @@ const MyApp = () => (
 const MyComponent = () => {
   const { featureIsOn } = useFlagr();
 
-  return featureIsOn('someFeature') ? 'new hotness' : 'old and busted';
+  return featureIsOn?.('someFeature') ? 'new hotness' : 'old and busted';
 };
 ```
 
@@ -39,7 +39,7 @@ npm link flagr-feature-typescript --save
 npm install
 ```
 
-## Developing
+## Development
 
 ```bash
 npm run dev
