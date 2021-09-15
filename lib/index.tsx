@@ -2,8 +2,8 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 import { createEvaluator, FlagCallbacks } from 'flagr-feature-typescript';
 
 type FlagrContextType = {
-  evaluateFeature?: <T>(flag: string, callbacks: FlagCallbacks<T>) => T;
-  featureIsOn?: (flag: string) => boolean;
+  evaluate?: <T>(flag: string, callbacks: FlagCallbacks<T>) => T;
+  match?: (flag: string, matchVariant?: string) => boolean;
 };
 
 const FlagrContext = createContext<FlagrContextType>({});
@@ -35,7 +35,10 @@ export const FlagrContextProvider = ({
         },
       });
 
-      setValue({ evaluateFeature: cachedEvaluate, featureIsOn: cachedMatch });
+      setValue({
+        evaluate: cachedEvaluate,
+        match: cachedMatch,
+      });
     })();
   }, []);
 
