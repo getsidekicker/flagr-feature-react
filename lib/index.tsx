@@ -2,11 +2,11 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 import { createEvaluator, FlagCallbacks } from 'flagr-feature-typescript';
 
 type FlagrContextType = {
-  evaluateFeature: <T>(flag: string, callbacks: FlagCallbacks<T>) => T;
-  featureIsOn: (flag: string) => boolean;
+  evaluateFeature?: <T>(flag: string, callbacks: FlagCallbacks<T>) => T;
+  featureIsOn?: (flag: string) => boolean;
 };
 
-const FlagrContext = createContext<FlagrContextType>(null!);
+const FlagrContext = createContext<FlagrContextType>({});
 
 export const useFlagr = useContext(FlagrContext);
 
@@ -21,7 +21,7 @@ export const FlagrContextProvider = ({
   flagrUrl,
   tags,
 }: FlagrContextProviderProps) => {
-  const [value, setValue] = useState<FlagrContextType>(null!);
+  const [value, setValue] = useState<FlagrContextType>({});
 
   useEffect(() => {
     (async () => {
