@@ -8,7 +8,7 @@ type FlagrContextType = {
 
 const FlagrContext = createContext<FlagrContextType>({});
 
-export const useFlagr = useContext(FlagrContext);
+export const useFlagr = () => useContext(FlagrContext);
 
 interface FlagrContextProviderProps {
   children: React.ReactNode;
