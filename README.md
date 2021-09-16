@@ -2,12 +2,6 @@
 
 ## Usage
 
-```bash
-npm install flagr-feature-react
-# or
-yarn add flagr-feature-react
-```
-
 ```tsx
 import { useFlagr, FlagrContextProvider } from 'flagr-feature-react';
 
