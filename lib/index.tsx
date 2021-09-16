@@ -25,11 +25,11 @@ export const FlagrContextProvider = ({
 
   useEffect(() => {
     (async () => {
-      const { batchEvaluation } = createEvaluator({
+      const Evaluator = createEvaluator({
         flagrUrl,
       });
 
-      const { cachedEvaluate, cachedMatch } = await batchEvaluation({
+      const { cachedEvaluate, cachedMatch } = await Evaluator.batchEvaluation({
         context: {},
         input: {
           tags,
