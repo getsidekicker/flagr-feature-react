@@ -29,13 +29,7 @@ const MyComponent = () => {
 
 ## Installation
 
-\*Until [flagr-feature-typescript](https://github.com/getsidekicker/flagr-feature-typescript) is published, it will need to be locally installed and linked manually before running install
-
 ```bash
-# In /flagr-feature-typescript/
-npm link
-# In this project
-npm link flagr-feature-typescript --save
 npm install
 ```
 

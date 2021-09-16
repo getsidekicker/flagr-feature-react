@@ -30,6 +30,7 @@ export const FlagrContextProvider = ({
       });
 
       const { cachedEvaluate, cachedMatch } = await batchEvaluation({
+        context: {},
         input: {
           tags,
         },
