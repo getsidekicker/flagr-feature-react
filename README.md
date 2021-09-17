@@ -1,5 +1,7 @@
 # flagr-feature-react
 
+[![image](https://img.shields.io/npm/v/flagr-feature-react?color=CC3534&logo=npm)](https://www.npmjs.com/package/flagr-feature-react)
+
 ## Usage
 
 ```tsx
