@@ -16,8 +16,9 @@
   "main": "build/index.js",
   "scripts": {
     "clean": "rm -rf build",
-    "build": "npm run clean && tsc",
-    "dev": "npm run build -- --watch"
+    "build": "npm run eslint && npm run clean && tsc",
+    "dev": "npm run build -- --watch",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@types/react": "^17.0.20",
@@ -31,6 +32,8 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.25.1",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
     "prettier": "^2.4.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -42,5 +45,9 @@
   },
   "dependencies": {
     "flagr-feature-typescript": "^0.0.1"
+  },
+  "lint-staged": {
+    "*.{ts,js}": "eslint --cache --fix",
+    "*.{ts,js,md,json}": "prettier --write"
   }
 }
