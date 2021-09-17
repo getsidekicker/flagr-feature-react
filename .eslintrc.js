@@ -15,6 +15,7 @@ module.exports = {
   },
   rules: {
     'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.ts'] }],
+    'react/require-default-props': 0,
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': ['error'],
     'no-use-before-define': 'off',

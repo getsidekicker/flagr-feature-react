@@ -9,17 +9,22 @@ import { useFlagr, FlagrContextProvider } from 'flagr-feature-react';
 
 const SOME_URL = 'flagrUrl';
 const APP_TAGS = ['local'];
+const OPTIONAL_CONTEXT = undefined;
 
 const MyApp = () => (
-  <FlagrContextProvider flagrUrl={SOME_URL} tags={APP_TAGS}>
+  <FlagrContextProvider
+    flagrUrl={SOME_URL}
+    tags={APP_TAGS}
+    context={OPTIONAL_CONTEXT}
+  >
     <MyComponent />
   </FlagrContextProvider>
 );
 
 const MyComponent = () => {
-  const { featureIsOn } = useFlagr();
+  const { match } = useFlagr();
 
-  return featureIsOn?.('someFeature') ? 'new hotness' : 'old and busted';
+  return match?.('someFeature') ? 'new hotness' : 'old and busted';
 };
 ```
 

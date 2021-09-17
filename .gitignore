@@ -3,6 +3,9 @@
 # dependencies
 node_modules
 
+# dev
+.eslintcache
+
 # builds
 build
 
