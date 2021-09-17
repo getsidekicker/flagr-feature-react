@@ -1,0 +1,23 @@
+# These files are ignored when packaging for npm
+
+# dependencies
+node_modules
+
+# dev
+*eslint*
+*prettier*
+tsconfig.json
+.husky
+
+# src
+lib
+
+# misc
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
