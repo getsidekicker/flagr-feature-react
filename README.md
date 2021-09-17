@@ -25,6 +25,8 @@ const MyComponent = () => {
 
 ## Installation
 
+Requires npm 7
+
 ```bash
 npm install
 ```
