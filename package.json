@@ -1,7 +1,7 @@
 {
   "name": "flagr-feature-react",
   "author": "Sidekicker",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "react module for using flagr-feature-typescript",
   "keywords": [
     "flagr",
@@ -16,6 +16,7 @@
   "main": "build/index.js",
   "scripts": {
     "clean": "rm -rf build",
+    "eslint": "node_modules/.bin/eslint lib/**/*",
     "build": "npm run eslint && npm run clean && tsc",
     "dev": "npm run build -- --watch",
     "prepare": "husky install"
