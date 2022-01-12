@@ -22,12 +22,12 @@ const MyApp = () => (
 );
 
 const MyComponent = () => {
-  const { match, evaluating } = useFlagr();
+  const { match, loaded } = useFlagr();
 
   return (
     <>
-      {evaluating && 'loading'}
-      {!evaluating && match?.('someFeature') ? 'new hotness' : 'old and busted'}
+      {!loaded && 'loading'}
+      {loaded && match?.('someFeature') ? 'new hotness' : 'old and busted'}
     </>
   );
 };

@@ -8,10 +8,10 @@ import {
 type FlagrContextType = {
   evaluate?: <T>(flag: string, callbacks: FlagCallbacks<T>) => T;
   match?: (flag: string, matchVariant?: string) => boolean;
-  evaluating: boolean;
+  loaded: boolean;
 };
 
-const FlagrContext = createContext<FlagrContextType>({ evaluating: true });
+const FlagrContext = createContext<FlagrContextType>({ loaded: false });
 
 export const useFlagr = () => useContext(FlagrContext);
 
@@ -28,7 +28,7 @@ export const FlagrContextProvider = ({
   tags,
   context = {},
 }: FlagrContextProviderProps) => {
-  const [value, setValue] = useState<FlagrContextType>({ evaluating: true });
+  const [value, setValue] = useState<FlagrContextType>({ loaded: false });
 
   useEffect(() => {
     (async () => {
@@ -46,7 +46,7 @@ export const FlagrContextProvider = ({
       setValue({
         evaluate: cachedEvaluate,
         match: cachedMatch,
-        evaluating: false,
+        loaded: true,
       });
     })();
   }, []);
