@@ -22,9 +22,14 @@ const MyApp = () => (
 );
 
 const MyComponent = () => {
-  const { match } = useFlagr();
+  const { match, loaded } = useFlagr();
 
-  return match?.('someFeature') ? 'new hotness' : 'old and busted';
+  return (
+    <>
+      {!loaded && 'loading'}
+      {loaded && match?.('someFeature') ? 'new hotness' : 'old and busted'}
+    </>
+  );
 };
 ```
 
