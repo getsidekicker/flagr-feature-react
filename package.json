@@ -17,6 +17,7 @@
   ],
   "license": "MIT",
   "main": "build/index.js",
+  "types": "build/index.d.ts",
   "scripts": {
     "clean": "rm -rf build",
     "eslint": "node_modules/.bin/eslint lib/**/*",

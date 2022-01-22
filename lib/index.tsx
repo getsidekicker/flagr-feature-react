@@ -5,7 +5,7 @@ import {
   JsonObject,
 } from 'flagr-feature-typescript';
 
-type FlagrContextType = {
+export type FlagrContextType = {
   evaluate?: <T>(flag: string, callbacks: FlagCallbacks<T>) => T;
   match?: (flag: string, matchVariant?: string) => boolean;
   loaded: boolean;
@@ -15,7 +15,7 @@ const FlagrContext = createContext<FlagrContextType>({ loaded: false });
 
 export const useFlagr = () => useContext(FlagrContext);
 
-interface FlagrContextProviderProps {
+export interface FlagrContextProviderProps {
   children: React.ReactNode;
   flagrUrl: string;
   tags: [string, ...string[]];
