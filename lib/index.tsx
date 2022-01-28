@@ -2,12 +2,14 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 import {
   createEvaluator,
   FlagCallbacks,
+  FlagVariant,
   JsonObject,
 } from 'flagr-feature-typescript';
 
 export type FlagrContextType = {
   evaluate?: <T>(flag: string, callbacks: FlagCallbacks<T>) => T;
   match?: (flag: string, matchVariant?: string) => boolean;
+  variant?: (flag: string) => FlagVariant;
   loaded: boolean;
 };
 
@@ -38,17 +40,19 @@ export const FlagrContextProvider = ({
         flagrUrl,
       });
 
-      const { cachedEvaluate, cachedMatch } = await Evaluator.batchEvaluation({
-        id,
-        context,
-        input: {
-          tags,
-        },
-      });
+      const { cachedEvaluate, cachedMatch, cachedVariant } =
+        await Evaluator.batchEvaluation({
+          id,
+          context,
+          input: {
+            tags,
+          },
+        });
 
       setValue({
         evaluate: cachedEvaluate,
         match: cachedMatch,
+        variant: cachedVariant,
         loaded: true,
       });
     })();

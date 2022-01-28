@@ -49,7 +49,7 @@
     "react-dom": ">=17.0.2"
   },
   "dependencies": {
-    "flagr-feature-typescript": "^0.0.2-3869072.0"
+    "flagr-feature-typescript": "^0.0.2-o356739.0"
   },
   "lint-staged": {
     "*.{ts,js}": "eslint --cache --fix",
