@@ -7,6 +7,7 @@
 ```tsx
 import { useFlagr, FlagrContextProvider } from 'flagr-feature-react';
 
+const ID = 'user_123';
 const SOME_URL = 'flagrUrl';
 const APP_TAGS = ['local'];
 const OPTIONAL_CONTEXT = undefined;
@@ -16,6 +17,7 @@ const MyApp = () => (
     flagrUrl={SOME_URL}
     tags={APP_TAGS}
     context={OPTIONAL_CONTEXT}
+    id={ID}
   >
     <MyComponent />
   </FlagrContextProvider>

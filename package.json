@@ -1,7 +1,7 @@
 {
   "name": "flagr-feature-react",
   "author": "Sidekicker",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "react module for using flagr-feature-typescript",
   "keywords": [
     "flagr",
@@ -12,8 +12,12 @@
     "type": "git",
     "url": "https://github.com/getsidekicker/flagr-feature-react"
   },
+  "files": [
+    "build"
+  ],
   "license": "MIT",
   "main": "build/index.js",
+  "types": "build/index.d.ts",
   "scripts": {
     "clean": "rm -rf build",
     "eslint": "node_modules/.bin/eslint lib/**/*",
@@ -45,7 +49,7 @@
     "react-dom": ">=17.0.2"
   },
   "dependencies": {
-    "flagr-feature-typescript": "^0.0.1"
+    "flagr-feature-typescript": "^0.0.3"
   },
   "lint-staged": {
     "*.{ts,js}": "eslint --cache --fix",
