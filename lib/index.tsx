@@ -37,6 +37,7 @@ export const FlagrContextProvider = ({
   useEffect(() => {
     (async () => {
       setValue({
+        ...value,
         loaded: false,
       });
 
