@@ -1,7 +1,7 @@
 {
   "name": "flagr-feature-react",
   "author": "Sidekicker",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "react module for using flagr-feature-typescript",
   "keywords": [
     "flagr",
