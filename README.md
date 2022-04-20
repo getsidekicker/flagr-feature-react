@@ -54,3 +54,7 @@ npm run dev
 ```bash
 npm run build
 ```
+
+## Publishing
+
+This is handled by GitHub actions

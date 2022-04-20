@@ -36,6 +36,11 @@ export const FlagrContextProvider = ({
 
   useEffect(() => {
     (async () => {
+      setValue({
+        ...value,
+        loaded: false,
+      });
+
       const Evaluator = createEvaluator({
         flagrUrl,
       });
@@ -56,7 +61,7 @@ export const FlagrContextProvider = ({
         loaded: true,
       });
     })();
-  }, []);
+  }, [id, tags, context, flagrUrl]);
 
   return (
     <FlagrContext.Provider value={value}>{children}</FlagrContext.Provider>
